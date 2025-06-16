@@ -60,7 +60,9 @@ const contentContainer =
   document.getElementsByClassName("content-container")[0];
 const introduceContentEl =
   document.getElementsByClassName("introduce-content")[0];
-const bodyEl = document.getElementsByTagName("html")[0];
+const bodyEl = document.getElementsByTagName("body")[0];
+const htmlEl = document.getElementsByTagName("html")[0];
+
 
 const mainEl = document.getElementById("main-container");
 const modalContainer = document.getElementsByClassName("modal-container")[0];
@@ -76,6 +78,16 @@ bodyEl.style.display = "flex";
 bodyEl.style.flexDirection = "column";
 bodyEl.style.justifyContent = "center";
 bodyEl.style.alignItems = "center";
+
+htmlEl.style.backgroundImage = `url('../assets/image/${currentStage}.jpg')`;
+htmlEl.style.backgroundRepeat = "no-repeat";
+htmlEl.style.backgroundPosition = "center";
+htmlEl.style.backgroundSize = "cover";
+htmlEl.style.height = "100%";
+htmlEl.style.display = "flex";
+htmlEl.style.flexDirection = "column";
+htmlEl.style.justifyContent = "center";
+htmlEl.style.alignItems = "center";
 
 setTimeout(() => {
   introduceContentEl.style.visibility = "visible";
@@ -129,6 +141,11 @@ const insertDialogMessage = () => {
         bodyEl.style.backgroundPosition = "center center";
         bodyEl.style.backgroundSize = "cover";
 
+        htmlEl.style.backgroundImage = `url('../assets/image/${currentStage}_open_gate.jpg')`;
+        htmlEl.style.backgroundRepeat = "no-repeat";
+        htmlEl.style.backgroundPosition = "center center";
+        htmlEl.style.backgroundSize = "cover";
+        contentContainer.innerHTML = ""
         setTimeout(() => {
           location.href = "/test/progress.html";
         }, 3000);

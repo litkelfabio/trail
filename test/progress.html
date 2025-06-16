@@ -305,8 +305,7 @@
       };
 
       setTimeout(() => {
-        const nextDestination =
-          Number(savedStage) == 1 ? Number(savedStage) + 1 : Number(savedStage);
+        const nextDestination = Number(savedStage) + 1 ;
         location.href = PROGRESS_DATA[nextDestination];
       }, 4000);
     </script>
