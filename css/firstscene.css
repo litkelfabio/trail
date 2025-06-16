@@ -48,6 +48,7 @@ p{
     right: 10px;
     bottom: 2rem;
     opacity: 0;
+    bottom: 0;
 }
 
 .dialog-container{

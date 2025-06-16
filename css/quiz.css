@@ -127,7 +127,7 @@ p {
   justify-content: space-evenly;
   margin: 6px;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .question {
@@ -176,4 +176,18 @@ p {
 
 button.answer-submit{
   margin-bottom: 12px;
+}
+
+/* Remove scrollbar background color */
+::-webkit-scrollbar {
+  width: 8px;  /* or set to 0 to hide scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* optional: adjust thumb color */
+  border-radius: 10px;
 }
