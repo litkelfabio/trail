@@ -213,9 +213,9 @@
           // Reset classes
           circle.classList.remove("completed", "active");
           console.log(stageNumber, currentStage)
-          if (stageNumber < currentStage || currentStage === 7) {
+          if (stageNumber < currentStage || currentStage === 8) {
             circle.classList.add("completed");
-            if(currentStage === 7){
+            if(currentStage === 8){
               setTimeout(() => {
               circle.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest"});
             }, 100);
@@ -241,7 +241,7 @@
           progressLineFill.style.transition = "none";
         }
 
-        if (isMobile) {
+        if (isMobile && currentStage < 8) {
           progressLineFill.style.height = `${progress}%`;
           progressLineFill.style.width = "100%"; // Ensure width is full for vertical line
         } else {
@@ -269,7 +269,7 @@
 
         // // Set an interval to advance the stage every 3 seconds (to match visual transition)
         // autoProgressInterval = setInterval(() => {
-        if (currentStage < totalStages) {
+        if (currentStage < totalStages + 1) {
           currentStage++;
           updateProgressBar(); // Call updateProgressBar without disabling transition
         } else {
