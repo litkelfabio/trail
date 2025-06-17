@@ -3,6 +3,8 @@ const nameInput = document.getElementById("nameInput")
 const contentContainer = document.getElementsByClassName("content-container")[0]
 let dialogNumber = 0
 
+sessionStorage.clear();
+
 nameInput.addEventListener("input", (e) => {
     if(e.target.value.length > 0 ){
         btnEl.disabled = false

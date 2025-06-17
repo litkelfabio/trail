@@ -62,7 +62,7 @@ const insertDialogMessage = () => {
             </div>
         </div>`;
     }else{
-        location.href = "/html/quiz.html"
+        location.href = "/html/lesson.html"
     }
 }
 

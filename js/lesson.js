@@ -1,7 +1,32 @@
 let slide = 0
 let imageArr = [];
+const currentStage = sessionStorage.getItem("currentStage") || "bonifacio";
 
-const progress = sessionStorage.getItem("progress") || "1";
+const bodyEl = document.getElementsByTagName("body")[0];
+const htmlEl = document.getElementsByTagName("html")[0];
+
+bodyEl.style.backgroundImage = `url('../assets/image/${currentStage}.jpg')`;
+bodyEl.style.backgroundRepeat = "no-repeat";
+bodyEl.style.backgroundPosition = "center";
+bodyEl.style.backgroundSize = "cover";
+bodyEl.style.height = "100%";
+bodyEl.style.display = "flex";
+bodyEl.style.flexDirection = "column";
+bodyEl.style.justifyContent = "center";
+bodyEl.style.alignItems = "center";
+
+htmlEl.style.backgroundImage = `url('../assets/image/${currentStage}.jpg')`;
+htmlEl.style.backgroundRepeat = "no-repeat";
+htmlEl.style.backgroundPosition = "center";
+htmlEl.style.backgroundSize = "cover";
+htmlEl.style.height = "100%";
+htmlEl.style.display = "flex";
+htmlEl.style.flexDirection = "column";
+htmlEl.style.justifyContent = "center";
+htmlEl.style.alignItems = "center";
+
+
+const progress = sessionStorage.getItem("progressBarStage") || "1";
 const lessons = LESSON_DATA[progress]
 const nextImage = () => {
     console.log(slide + 1)
