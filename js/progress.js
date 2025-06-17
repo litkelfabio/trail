@@ -47,11 +47,11 @@
 //     progressbarContainer.innerHTML += progressEl
 // }
 
-let progress = Number(localStorage.getItem("progress")) || 1;
+let progress = Number(sessionStorage.getItem("progress")) || 1;
 let stage1 = true;
-let horLeft = localStorage.getItem("horLeft") || "true";
-let initialLeft = Number(localStorage.getItem("left")) || 10;
-let initialTop = Number(localStorage.getItem("top")) || 30;
+let horLeft = sessionStorage.getItem("horLeft") || "true";
+let initialLeft = Number(sessionStorage.getItem("left")) || 10;
+let initialTop = Number(sessionStorage.getItem("top")) || 30;
 
 setTimeout(() => {
   playProgress();
@@ -147,10 +147,10 @@ const playProgress = () => {
     indicator.classList.add("success-indicator");
     progress++;
 
-    // localStorage.setItem("left", initialLeft);
-    // localStorage.setItem("top", initialTop);
-    // localStorage.setItem("progress", progress);
-    // localStorage.setItem("horLeft", horLeft)
+    // sessionStorage.setItem("left", initialLeft);
+    // sessionStorage.setItem("top", initialTop);
+    // sessionStorage.setItem("progress", progress);
+    // sessionStorage.setItem("horLeft", horLeft)
     
     setTimeout(() => {
       // location.href = PROGRESS_DATA[progress]

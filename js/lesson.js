@@ -1,7 +1,7 @@
 let slide = 0
 let imageArr = [];
 
-const progress = localStorage.getItem("progress") || "1";
+const progress = sessionStorage.getItem("progress") || "1";
 const lessons = LESSON_DATA[progress]
 const nextImage = () => {
     console.log(slide + 1)

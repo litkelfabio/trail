@@ -2,7 +2,10 @@ let dialogNumber = 0;
 const contentContainer = document.getElementsByClassName("content-container")[0]
 const bodyEl = document.getElementsByClassName("introduce-content")[0]
 
-localStorage.setItem("currentStage","bonifacio-shrine")
+if(!userName){
+    location.href = "/index.html"
+}
+sessionStorage.setItem("currentStage","bonifacio-shrine")
 
 setTimeout(() => {
     bodyEl.style.visibility = "visible"

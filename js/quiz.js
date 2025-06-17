@@ -2,7 +2,12 @@ let dialogNumber = 0;
 let currentQuizNum = 0;
 let hasWrongAns = 0;
 
-const savedStage = Number(localStorage.getItem("progressBarStage")) || 1;
+
+if(!userName){
+  location.href = "/index.html"
+}
+
+const savedStage = Number(sessionStorage.getItem("progressBarStage")) || 1;
 const CORRECT_DIALOG = [
   "",
   {
@@ -67,7 +72,7 @@ const htmlEl = document.getElementsByTagName("html")[0];
 const mainEl = document.getElementById("main-container");
 const modalContainer = document.getElementsByClassName("modal-container")[0];
 
-const currentStage = localStorage.getItem("currentStage") || "bonifacio";
+const currentStage = sessionStorage.getItem("currentStage") || "bonifacio";
 
 bodyEl.style.backgroundImage = `url('../assets/image/${currentStage}.jpg')`;
 bodyEl.style.backgroundRepeat = "no-repeat";
@@ -308,7 +313,7 @@ const showModal = (dialog, stop = false) => {
 const submitFillBlanks = () => {
   const answerInput = document.getElementsByClassName("answer-input");
   const answerArr = Array.from(answerInput).map((answer) => answer.value);
-  const answer = answerArr.join(",");
+  const answer = answerArr.join(",").toLowerCase();
   const correctAns = QUIZES[savedStage].questions[currentQuizNum].answer;
   const randomNum = Math.floor(Math.random() * 3);
   if (answer === correctAns) {
@@ -374,11 +379,12 @@ const submitMatchingWithImages = () => {
   if (QUIZES[savedStage].questions[currentQuizNum].hasMultipleAnswer) {
     const answerInput = document.getElementsByClassName("answer-input");
     const answerArr = Array.from(answerInput).map((answer) => answer.value);
-    answer = answerArr.join(",");
+    answer = answerArr.join(",").toLowerCase();
   } else {
     const answerInput = document.getElementById("answer-input");
     answer = answerInput.value.toLowerCase();
   }
+  console.log(answer, correctAns)
   correctAns = QUIZES[savedStage].questions[currentQuizNum].answer;
   const randomNum = Math.floor(Math.random() * 3);
   console.log("randomNum: ", randomNum);

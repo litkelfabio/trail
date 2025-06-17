@@ -147,7 +147,7 @@
     </div>
 
     <script>
-      const savedStage = localStorage.getItem("progressBarStage") || 1;
+      const savedStage = sessionStorage.getItem("progressBarStage") || 1;
       const totalStages = 7;
       const progressBar = document.getElementById("progressBar");
       const progressLineFill = document.getElementById("progressLineFill");
@@ -182,7 +182,7 @@
 
       // Function to render all stages
       function renderStages() {
-        const savedStage = localStorage.getItem("progressBarStage");
+        const savedStage = sessionStorage.getItem("progressBarStage");
         // Clear existing stages (useful for re-rendering on resize if needed, though not strictly necessary with current setup)
         while (progressBar.children.length > 1) {
           // Keep the progress line div
@@ -257,7 +257,7 @@
         }
 
         // Save current stage to local storage
-        localStorage.setItem("progressBarStage", currentStage);
+        sessionStorage.setItem("progressBarStage", currentStage);
       }
 
       // Function to start the automatic progression
@@ -307,6 +307,7 @@
       setTimeout(() => {
         const nextDestination = Number(savedStage) + 1 ;
         location.href = PROGRESS_DATA[nextDestination];
+        console.log(nextDestination)
       }, 4000);
     </script>
     <script src="/data/progress-data.js"></script>

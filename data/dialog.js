@@ -1,5 +1,5 @@
 
-const userName = sessionStorage.getItem("userName") || "user"
+const userName = sessionStorage.getItem("userName")
 const DIALOGS = [
 `Hello, ${userName}!`,
 `Are you ready to join me in this exciting journey?`,

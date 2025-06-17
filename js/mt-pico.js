@@ -2,7 +2,12 @@ let dialogNumber = 0;
 const contentContainer = document.getElementsByClassName("content-container")[0]
 const bodyEl = document.getElementsByClassName("introduce-content")[0]
 
-localStorage.setItem("currentStage","mt-pico")
+
+if(!userName){
+    location.href = "/index.html"
+}
+
+sessionStorage.setItem("currentStage","mt-pico")
 
 setTimeout(() => {
     bodyEl.style.visibility = "visible"
